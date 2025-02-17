@@ -9,7 +9,9 @@ namespace AdeebSessionsIPG203
 {
     class Student
     {
+        // [private] DT name;
         int id;
+        public Hero hero;
         public int Id
         {
             get => id;
@@ -26,21 +28,22 @@ namespace AdeebSessionsIPG203
         public void PrintInfo()
         {
             Id = 10;
-            Console.WriteLine("The name is {0}, The age is: {1}", Name, Age);
+            Console.WriteLine("The name is {0}, The age is: {1} {2}", Name, Age , hero.Id);
         }
 
+    }
+
+    class Hero
+    {
+        public int Id { get; set; }
     }
     internal class Program
     {
         static void Main(string[] args)
         {
-            int[] array = { 1, 2, 3, 4 };
-
-            for (int i = 0; i < array.Length; i++)
-            {
-                Console.WriteLine(array[i]);
-            }
-
+            Student student = new Student();
+            student.hero = new Hero();
+            student.PrintInfo();    
         }
     }
 }
