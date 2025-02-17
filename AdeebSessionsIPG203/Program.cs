@@ -70,6 +70,8 @@ namespace AdeebSessionsIPG203
 
             student.SetName("Adeeb");
             Console.WriteLine(student.GetName());
+
+            Console.WriteLine("Hello Adeeb");
         }
     }
     class Student
