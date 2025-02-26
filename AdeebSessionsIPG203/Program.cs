@@ -7,70 +7,51 @@ using System.Threading.Tasks;
 
 namespace AdeebSessionsIPG203
 {
-    class Student
+    class Person
     {
-        //declare fields 
-        private string id;
+        public static int instances = 0;
         private string name;
-        private int age;
-        private string email;
-        private decimal salary;
-        private bool hasSalary;
-        //default constructer
-        public Student()
+        public static string Organisation { get; set; }
+        public int GetInstances()
         {
-            id = "";
-            name = "";
-            age = 0;
-            email = "";
-            salary = 0;
-            hasSalary = false;
+            return instances;
         }
-        //overloaded consturecters
-        public Student(string vId, string name, int age, string email, decimal salary)
+        public static void WritePersonNumber()
         {
-            id = vId;
+            Console.WriteLine("Using WritePersonNumber, Person Counter is : {0} ",
+           instances);
+        }
+        public Person(string name)
+        {
+            instances++;
             this.name = name;
-            this.age = age;
-            this.email = email;
-            this.salary = salary;
-            hasSalary = true;
         }
-        public Student(string vId, string name, int age, string email)
+        public string Name
         {
-            id = vId;
-            this.name = name;
-            this.age = age;
-            this.email = email;
-            hasSalary= false;
+            get { return name; }
+            set { name = value; }
         }
-        //declare properties
-        public decimal Salary { get => salary; set => salary = value; }
-        public string Id { get => id; set => id = value; }
-        public string Name { get { return name; } set { name = value; } }
-        public int Age { get { return age; } set { age = value; } }
-        public string Email { get { return email; } set { email = value; } }
-        public void PrintInformations()
+        public  void PrintInfo()
         {
-            Console.WriteLine($"The Id is :{id}");
-            Console.WriteLine($"The Name is :{name}");
-            Console.WriteLine($"The Age is :{age}");
-            Console.WriteLine($"The Email is :{email}");
-            if (hasSalary == true)
-                Console.WriteLine($"The Salary is :{Salary}");
+            Console.WriteLine(instances);
         }
+
 
     }
     internal class Program
     {
         static void Main(string[] args)
         {
-            Student student = new Student("21", "Rami", 24, "ramialzend@gmail.com", 0);
-            student.PrintInformations();
-            Console.WriteLine("---------------------------------------------");
-            Student student2 = new Student("22", "adeeb", 24, "adeebmansour@gmail.com");
-            student2.PrintInformations();
-
+            Person person1 = new Person("Ahmad");
+            Person person2 = new Person("Ziad");
+            Person person3 = new Person("Reem");
+            Person.Organisation = "Univ.";
+            Console.WriteLine("Using instances, Person Counter is : {0} ", Person.instances);
+            Person.WritePersonNumber();
+            Console.WriteLine("Person Organisation is : {0} ", Person.Organisation);
+            Console.WriteLine("Person1 Counter is : {0} ", person1.GetInstances());
+            Console.WriteLine("Person2 Counter is : {0} ", person2.GetInstances());
+            Console.WriteLine("Person3 Counter is : {0} ", person3.GetInstances());
         }
     }
 
