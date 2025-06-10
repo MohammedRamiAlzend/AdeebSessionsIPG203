@@ -42,19 +42,20 @@ namespace AdeebSessionsIPG203
     {
         static void Main(string[] args)
         {
-            Person person1 = new Person("Ahmad");
-            Person person2 = new Person("Ziad");
-            Person person3 = new Person("Reem");
-            Person.Organisation = "Univ.";
-            Console.WriteLine("Using instances, Person Counter is : {0} ", Person.instances);
-            Person.WritePersonNumber();
-            Console.WriteLine("Person Organisation is : {0} ", Person.Organisation);
-            Console.WriteLine("Person1 Counter is : {0} ", person1.GetInstances());
-            Console.WriteLine("Person2 Counter is : {0} ", person2.GetInstances());
-            Console.WriteLine("Person3 Counter is : {0} ", person3.GetInstances());
-        }
-    }
+            Test t = new Test();
+            t.MyValue = 1;
 
+            Test t2 = new Test();
+            t2.MyValue = 3;
+
+            Console.WriteLine(t.MyValue);
+        }
+
+    }
+    public class Test
+    {
+        public int MyValue { get; set; }
+    }
 }
 
 
