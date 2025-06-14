@@ -11,8 +11,23 @@ namespace AdeebSessionsIPG203
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(Math.Sqrt(25)); 
-
+            Shape rect = new Shape(1,2);
+            Console.WriteLine(rect.Area());
+        }
+        static void Display()
+        {
+            Console.WriteLine("Hello");
+        }
+        static void Display(string message) {
+            Console.WriteLine(message);
+        }
+        static void Display(string message,int age)
+        {
+            Console.WriteLine("{0} {1}",message,age);
+        }
+        static void Display( int age, string message)
+        {
+            Console.WriteLine("{0}", age);
         }
     }
 }
